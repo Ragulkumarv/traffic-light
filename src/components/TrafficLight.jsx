@@ -39,6 +39,7 @@ const TrafficLight = () => {
   }, [light]);
   return (
     <section className="flex flex-col items-center justify-center bg-gray-900 min-h-screen">
+      <h1 className="text-white mb-4 text-2xl">Traffic light</h1>
       <section className="flex flex-col gap-2">
         <div
           className={`w-14 h-14 rounded-full ${
