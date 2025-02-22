@@ -1,23 +1,40 @@
 import { useEffect, useState } from "react";
 
+const lightTimer = {
+  red: 4000,
+  orange: 1000,
+  green: 5000,
+};
+
 const TrafficLight = () => {
   const [light, setLight] = useState("red");
 
+  const nextColor = {
+    //will assign next color based on current color
+    red: "green",
+    orange: "red",
+    green: "orange",
+  };
+
   useEffect(() => {
-    let timer;
-    if (light === "red") {
-      timer = setTimeout(() => {
-        setLight("green");
-      }, 4000);
-    } else if (light === "orange") {
-      timer = setTimeout(() => {
-        setLight("red");
-      }, 2000);
-    } else if (light === "green") {
-      timer = setTimeout(() => {
-        setLight("orange");
-      }, 5000);
-    }
+    // let timer;
+    // if (light === "red") {
+    //   timer = setTimeout(() => {
+    //     setLight("green");
+    //   }, 4000);
+    // } else if (light === "orange") {
+    //   timer = setTimeout(() => {
+    //     setLight("red");
+    //   }, 2000);
+    // } else if (light === "green") {
+    //   timer = setTimeout(() => {
+    //     setLight("orange");
+    //   }, 5000);
+    // }
+
+    const timer = setTimeout(() => {
+      setLight(nextColor[light]);
+    }, lightTimer[light]);
     return () => clearTimeout(timer);
   }, [light]);
   return (
