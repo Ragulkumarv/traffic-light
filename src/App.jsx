@@ -1,7 +1,8 @@
 import "./App.css";
+import TrafficLight from "./components/TrafficLight";
 
 function App() {
-  return <section className="font-bold underline">Hello</section>;
+  return <TrafficLight />;
 }
 
 export default App;
